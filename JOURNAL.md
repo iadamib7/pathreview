@@ -22,12 +22,14 @@ I chose this issue because it is a Tier 1 bug with a clear reproduction example,
 
 ## Week 8 — Reproduction & solution planning
 
-**Reproduction commit link:** [Add after pushing the reproduction commit]
+
+**Reproduction commit link:** https://github.com/iadamib7/pathreview/commit/2df3497
 
 **Reproduction summary:**
 I reproduced Issue #150 by running the existing `test_node_modules_excluded` and `test_build_directory_excluded` tests in `tests/unit/test_tech_detector.py`. Both tests failed because `TechDetector` counted JavaScript files inside `node_modules/` and `build/`, causing it to report JavaScript instead of the expected Python primary language.
 
-**PLAN.md link:** [Add after pushing the branch]
+
+**PLAN.md link:** https://github.com/iadamib7/pathreview/blob/fix/150-ignore-vendored-build-files/PLAN.md
 
 **Walkthrough video (recommended):** Not recorded
 
