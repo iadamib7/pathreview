@@ -17,3 +17,19 @@ I chose this issue because it is a Tier 1 bug with a clear reproduction example,
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
 **Cohort ledger:** [x] Issue added to cohort ledger
+
+
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** [Add after pushing the reproduction commit]
+
+**Reproduction summary:**
+I reproduced Issue #150 by running the existing `test_node_modules_excluded` and `test_build_directory_excluded` tests in `tests/unit/test_tech_detector.py`. Both tests failed because `TechDetector` counted JavaScript files inside `node_modules/` and `build/`, causing it to report JavaScript instead of the expected Python primary language.
+
+**PLAN.md link:** [Add after pushing the branch]
+
+**Walkthrough video (recommended):** Not recorded
+
+**Blockers or open questions:**
+I still need to confirm how file paths are normalized inside `TechDetector` and whether nested or Windows-style paths require additional handling.
