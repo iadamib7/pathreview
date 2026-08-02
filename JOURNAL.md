@@ -35,3 +35,18 @@ I reproduced Issue #150 by running the existing `test_node_modules_excluded` and
 
 **Blockers or open questions:**
 I still need to confirm how file paths are normalized inside `TechDetector` and whether nested or Windows-style paths require additional handling.
+
+
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+I implemented the fix for Issue #150 in `agent/tools/tech_detector.py`. The detector now normalizes file paths and excludes files located inside vendored or generated directories before performing language detection. The existing `test_node_modules_excluded` and `test_build_directory_excluded` regression tests now pass, and all 27 tests in `tests/unit/test_tech_detector.py` pass.
+
+**Next steps:**
+I will open a draft pull request, request peer or mentor feedback, review the repository contribution checklist, and document the repository-wide pre-existing test failures. After addressing any relevant feedback, I will mark the pull request ready for review and complete Check-in 2.
+
+**Blockers:**
+The full unit-test suite currently has 51 pre-existing failures in unrelated modules. My focused TechDetector tests pass, and my changes do not touch the failing modules.
