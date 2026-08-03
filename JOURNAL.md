@@ -53,3 +53,21 @@ The full unit-test suite currently has 51 pre-existing failures in unrelated mod
 
 **Tests added or updated:**
 Updated the TechDetector test coverage by adding regression tests for Windows-style paths, deeply nested vendored/build directories, and filenames that resemble skipped directory names. Verified that all TechDetector unit tests pass.
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** https://github.com/ascherj/pathreview/pull/551
+
+**Branch:** `fix/150-ignore-vendored-build-files`
+
+**What you built:**
+I updated `TechDetector` so files inside vendored dependency and generated build directories do not affect primary-language detection. The implementation normalizes Windows and Unix path separators, checks only directory components, and excludes paths inside directories such as `node_modules`, `build`, `dist`, `vendor`, `.git`, `.venv`, `venv`, and `__pycache__`.
+
+**Tests added or updated:**
+I added `tests/unit/test_tech_detector_path_edge_cases.py` with regression tests for Windows-style backslash paths, deeply nested `node_modules` and `build` directories, and valid source files named `node_modules.py` and `build.py`. I also verified that the 27 existing tests in `tests/unit/test_tech_detector.py` and the 3 new edge-case tests all pass.
+
+**Self-review confirmation:** [x] make check passes  [x] focused TechDetector unit tests pass; repository-wide unit suite has documented pre-existing unrelated failures
+
+**Draft PR feedback received from:** none
