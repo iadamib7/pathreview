@@ -50,3 +50,6 @@ I will open a draft pull request, request peer or mentor feedback, review the re
 
 **Blockers:**
 The full unit-test suite currently has 51 pre-existing failures in unrelated modules. My focused TechDetector tests pass, and my changes do not touch the failing modules.
+
+**Tests added or updated:**
+Updated the TechDetector test coverage by adding regression tests for Windows-style paths, deeply nested vendored/build directories, and filenames that resemble skipped directory names. Verified that all TechDetector unit tests pass.
