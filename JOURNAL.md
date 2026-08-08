@@ -71,3 +71,80 @@ I added `tests/unit/test_tech_detector_path_edge_cases.py` with regression tests
 **Self-review confirmation:** [x] make check passes  [x] focused TechDetector unit tests pass; repository-wide unit suite has documented pre-existing unrelated failures
 
 **Draft PR feedback received from:** none
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+No reviewer or maintainer feedback has been provided on my pull request.
+As noted in the Summer 2026 course instructions, reviewer feedback is not
+provided for this cohort, so I am documenting that no review was received.
+
+**How you responded:**
+No response or additional changes were required because I did not receive
+reviewer feedback.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+
+The hardest part was not the final code change itself, but understanding the
+existing repository workflow and making sure my contribution met all of the
+project's standards. I had to reproduce Issue #150, trace the behavior to
+`agent/tools/tech_detector.py`, understand the existing tests, and work
+through formatting, linting, type-checking, and Git requirements. I also
+learned that having a working fix is only one part of completing an
+open-source contribution; tests, documentation, commits, and the pull
+request process are equally important.
+
+**What did you learn about working in a large codebase?**
+
+I learned to make focused changes instead of trying to understand or modify
+the entire repository. For Issue #150, I concentrated on
+`agent/tools/tech_detector.py` and the related unit tests, reproduced the
+failure first, and then changed only the path-filtering behavior responsible
+for the bug. I also learned that existing tests and contribution guidelines
+are important sources of information because they show the behavior and
+standards that maintainers expect. This is different from my own projects,
+where I control the architecture and can change several parts of the system
+without coordinating with an existing codebase.
+
+**How did AI tools help — and where did they fall short?**
+
+AI tools were useful for helping me interpret test failures, understand the
+TechDetector logic, plan the fix, and troubleshoot Git, pytest, formatting,
+and type-checking errors. They also helped me think about edge cases such as
+Windows-style paths and nested vendored directories. However, I learned that
+I could not rely on AI output without verifying it against the repository.
+At one point, changes to the test file introduced linting and type-checking
+problems, so I had to use the actual pytest, Ruff, Black, mypy, Git, and
+repository results to determine what was correct. The biggest lesson was
+that AI can accelerate investigation and debugging, but the codebase,
+tests, and contribution requirements remain the source of truth.
+
+**What would you do differently if you started over?**
+
+I would read the complete grading rubric and `CONTRIBUTING.md` before making
+my first change and maintain a checklist for every required deliverable. I
+would also add my own edge-case tests earlier instead of relying initially
+on only the existing regression tests. Most importantly, I would verify the
+final GitHub branch, `JOURNAL.md`, test commits, PR description, and PR status
+against the rubric before submitting. This would have helped me avoid the
+documentation and submission problems I encountered during Week 9.
+
+**What are you most proud of from this module?**
+
+I am most proud that I worked through a real bug from reproduction to a
+tested implementation rather than stopping once the two original failing
+tests passed. My final TechDetector change handles vendored and generated
+directories while accounting for both Unix and Windows path separators, and
+I added regression coverage for additional path edge cases. More broadly,
+I am proud that I became more comfortable navigating an unfamiliar
+repository, diagnosing failures, using Git branches and commits, and
+preparing a contribution for review.
